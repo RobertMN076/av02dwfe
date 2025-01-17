@@ -1,0 +1,9 @@
+:root {
+    --text-color: black;
+    --background-color: white;
+}
+
+@font-face {
+    font-family: F1Bold;
+    src: url(./app/assets/fonts/Formula1-Bold.otf) format("truetype");
+}

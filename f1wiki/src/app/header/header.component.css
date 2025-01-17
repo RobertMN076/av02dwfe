@@ -1,0 +1,56 @@
+* {
+    transition: 0.5s;
+}
+
+#offcanvasNavbar {
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.navbar {
+    background-color: white !important;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+button {
+    border: 0px;
+    background-color: transparent;
+}
+
+button:hover {
+    transform: translateY(5px);
+}
+
+button:active, button:focus {
+    outline: 0 !important;
+}
+
+.flex-fill {
+    overflow: hidden;
+}
+
+.flex-fill img {
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.flex-fill:hover img {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+.text-overlay {
+    font-family: F1Bold;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -0%); /* Centraliza verticalmente e rotaciona 90° */
+    color: white;
+    font-size: 72px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra para destaque */
+    white-space: nowrap; /* Evita quebra de linha no texto */
+    text-align: center;
+    pointer-events: none;
+}
+
