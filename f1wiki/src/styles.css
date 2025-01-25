@@ -7,3 +7,7 @@
     font-family: F1Bold;
     src: url(./app/assets/fonts/Formula1-Bold.otf) format("truetype");
 }
+
+body {
+    background-color: #212529;
+}
