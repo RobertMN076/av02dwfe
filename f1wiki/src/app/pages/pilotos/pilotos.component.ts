@@ -8,7 +8,7 @@ import { TableModule } from 'primeng/table';
 @Component({
   selector: 'app-pilotos',
   standalone: true,
-  imports: [NgFor, TableModule],
+  imports: [TableModule],
   templateUrl: './pilotos.component.html',
   styleUrl: './pilotos.component.css'
 })
