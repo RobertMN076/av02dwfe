@@ -1,4 +1,17 @@
-table {
-    width: 80%;
-    margin-top: 200px;
+p-table {
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    height: 110vh;            /* Ocupa toda a altura da tela */
+    font-family: F1Regular;   /* Usa a fonte F1Bold */
+}
+
+p-table th {
+    font-family: F1Bold;      /* Usa a fonte F1Bold */
+    border-bottom: 0;
+}
+
+p-table td {
+    border-bottom: 0;
+    user-select: none;
 }

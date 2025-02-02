@@ -3,11 +3,12 @@ import { RouterLink } from '@angular/router';
 import { Pilotos } from '../../models/pilotos';
 import { PilotoService } from '../../services/pilotos.service';
 import { NgFor } from '@angular/common';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-pilotos',
   standalone: true,
-  imports: [ NgFor],
+  imports: [NgFor, TableModule],
   templateUrl: './pilotos.component.html',
   styleUrl: './pilotos.component.css'
 })

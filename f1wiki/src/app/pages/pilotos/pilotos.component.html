@@ -1,23 +1,25 @@
-
-<table
-    class="table table-hover table-dark  position-absolute top-50 start-50 translate-middle text-center">
-    <thead>
-    <tr class="no-border">
-        <th scope="col"> Número </th>
-        <th scope="col"> Código </th>
-        <th scope="col"> Nome </th>
-        <th scope="col"> Nacionalidade </th>
-        <th scope="col"> Nascimento </th>
-        <th scope="col"> Biografia </th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of pilotos">
-            <th scope="row">{{item.permanentNumber}}</th>
-            <td>{{item.code}}</td>
-            <td>{{item.givenName}} {{item.familyName}}</td>
-            <td>{{item.nationality}}</td>
-            <td>{{item.dateOfBirth}}</td>
-            <td><a href="{{item.url}}">{{item.url}}</a></td>
+<p-table 
+[value]="pilotos" 
+sortField="code" 
+[sortOrder]="1" 
+[tableStyle]="{ 'min-width': '60rem' }" 
+[paginator]="true"
+[rows]="12">
+    <ng-template #header>
+        <tr>
+            <th pSortableColumn="code" style="width:20%"> Código <p-sortIcon field="code" /> </th>
+            <th pSortableColumn="givenName" style="width:20%"> Nome <p-sortIcon field="givenName" /> </th>
+            <th pSortableColumn="permanentNumber" style="width:20%"> Número <p-sortIcon field="permanentNumber" /> </th>
+            <th pSortableColumn="nationality" style="width:20%"> Nacionalidade <p-sortIcon field="nationality" /> </th>
         </tr>
-</table>
+    </ng-template>
+    <ng-template #body let-piloto>
+        <tr>
+            <td>{{ piloto.code }}</td>
+            <td>{{ piloto.givenName }} {{ piloto.familyName}}</td>
+            <td>{{ piloto.permanentNumber }}</td>
+            <td>{{ piloto.nationality }}</td>
+            
+        </tr>
+    </ng-template>
+</p-table>

@@ -8,6 +8,12 @@
     src: url(./app/assets/fonts/Formula1-Bold.otf) format("truetype");
 }
 
+@font-face {
+    font-family: F1Regular;
+    src: url(./app/assets/fonts/Formula1-Regular.otf) format("truetype");
+}
+
 body {
-    background-color: #212529;
+    background-color: #18181b;
+    overflow: hidden;
 }

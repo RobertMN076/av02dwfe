@@ -1,6 +1,6 @@
 export interface Pilotos {
     driverId: string
-    permanentNumber: string
+    permanentNumber: number
     code: string
     url: string
     givenName: string
