@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CircuitosService } from '../../services/circuitos.service';
 import { TableModule } from 'primeng/table';
 import { NgClass, NgFor } from '@angular/common';
+import { PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-circuitos',

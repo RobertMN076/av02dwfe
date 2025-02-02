@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center align-items-center vh-100 pt-5">
+    <div class="table-container w-100">
+        <p-table 
+            [value]="circuitos" 
+            sortField="code" 
+            [sortOrder]="1" 
+            [tableStyle]="{ 'min-width': '100%', 'max-width': '80rem' }"
+            [paginator]="true"
+            [rows]="12"
+            responsiveLayout="scroll"
+            selectionMode="single"> 
+
+            <ng-template #header>
+                <tr>
+                    <th pSortableColumn="circuitName"> Autódromo <p-sortIcon field="circuitName" /> </th>
+                    <th pSortableColumn="Location.locality"> Cidade <p-sortIcon field="Location.locality" /> </th>
+                    <th pSortableColumn="Location.country"> País <p-sortIcon field="Location.country" /> </th>
+                    <th pSortableColumn="wiki"> Wiki </th>
+                </tr>
+            </ng-template>
+
+            <ng-template #body let-circuitos>
+                <tr>
+                    <td>{{ circuitos.circuitName }}</td>
+                    <td>{{ circuitos.Location.locality }}</td>
+                    <td>{{ circuitos.Location.country }}</td>
+                    <td> <a href="{{ circuitos.url }}" target="_blank"> <img src="/wikipedia.png"> </a>  </td>
+                </tr>
+            </ng-template>
+
+        </p-table>
+    </div>
+</div>

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CircuitosService {
-  private apiUrl = 'http://ergast.com/api/f1/circuits.json'; // URL da API Ergast
+  private apiUrl = 'http://ergast.com/api/f1/2024/circuits.json'; // URL da API Ergast
 
   constructor(private http: HttpClient) { }
 

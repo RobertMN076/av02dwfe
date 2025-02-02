@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { EquipesService } from '../../services/equipes.service';
 import { NgFor } from '@angular/common';
+
 @Component({
   selector: 'app-equipes',
   standalone: true,
-  imports: [TableModule, NgFor],
+  imports: [TableModule],
   templateUrl: './equipes.component.html',
   styleUrl: './equipes.component.css'
 })

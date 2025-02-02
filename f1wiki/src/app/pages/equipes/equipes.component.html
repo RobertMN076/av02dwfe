@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center align-items-center vh-100 pt-5">
+    <div class="table-container w-100">
+        <p-table 
+            [value]="equipes" 
+            sortField="name " 
+            [sortOrder]="1" 
+            [tableStyle]="{ 'min-width': '100%', 'max-width': '80rem' }"
+            responsiveLayout="scroll"
+            selectionMode="single"> 
+
+            <ng-template #header>
+                <tr>
+                    <th pSortableColumn="name"> Nome <p-sortIcon field="name" /> </th>
+                    <th pSortableColumn="nationality"> Nacionalidade <p-sortIcon field="nationality" /> </th>
+                    <th pSortableColumn="wiki"> Wiki </th>
+                </tr>
+            </ng-template>
+
+            <ng-template #body let-equipes>
+                <tr>
+                    <td>{{ equipes.name }}</td>
+                    <td>{{ equipes.nationality }}</td>
+                    <td> <a href="{{ equipes.url }}" target="_blank"> <img src="/wikipedia.png"> </a>  </td>
+                </tr>
+            </ng-template>
+
+        </p-table>
+    </div>
+</div>
