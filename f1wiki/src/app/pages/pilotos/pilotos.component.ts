@@ -4,11 +4,12 @@ import { Pilotos } from '../../models/pilotos';
 import { PilotoService } from '../../services/pilotos.service';
 import { NgFor } from '@angular/common';
 import { TableModule } from 'primeng/table';
+import { FormsComponent } from '../../components/forms/forms.component';
 
 @Component({
   selector: 'app-pilotos',
   standalone: true,
-  imports: [TableModule],
+  imports: [TableModule, FormsComponent],
   templateUrl: './pilotos.component.html',
   styleUrl: './pilotos.component.css'
 })
