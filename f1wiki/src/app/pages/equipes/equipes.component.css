@@ -1,3 +1,7 @@
+* {
+    transition: 0.1s;
+}
+
 p-table {
     display: flex;
     justify-content: center;
@@ -12,11 +16,23 @@ p-table th {
 
 p-table td {
     border-bottom: 0;
-    user-select: none;
     text-align: center !important;
+    cursor: pointer;
+}
+
+p-table td:hover {
+    color: red;
 }
 
 p-table img {
     width: 24px;
     user-select: pointer !important;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    background-color: transparent;
+    text-align: center;
 }

@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+
 import { CircuitosService } from '../../services/circuitos.service';
+
 import { TableModule } from 'primeng/table';
+
 import { NgClass, NgFor } from '@angular/common';
-import { PipeTransform } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-circuitos',
   standalone: true,
-  imports: [TableModule],
+  imports: [TableModule, FormsModule],
   templateUrl: './circuitos.component.html',
   styleUrl: './circuitos.component.css'
 })

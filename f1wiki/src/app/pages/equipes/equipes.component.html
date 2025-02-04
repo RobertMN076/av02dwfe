@@ -16,10 +16,36 @@
                 </tr>
             </ng-template>
 
-            <ng-template #body let-equipes>
+            <ng-template #body let-equipes let-editing="editing">
                 <tr>
-                    <td>{{ equipes.name }}</td>
-                    <td>{{ equipes.nationality }}</td>
+                    <td [pEditableColumn]="equipes.name" pEditableColumnField="name">
+                        <p-cellEditor>
+                            <ng-template #input>
+                                <input
+                                    pInputText
+                                    type="text"
+                                    [(ngModel)]="equipes.name" />
+                            </ng-template>
+                            <ng-template #output>
+                                {{ equipes.name }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    
+                    <td [pEditableColumn]="equipes.nationality" pEditableColumnField="nationality">
+                        <p-cellEditor>
+                            <ng-template #input>
+                                <input
+                                    pInputText
+                                    type="text"
+                                    [(ngModel)]="equipes.nationality" />
+                            </ng-template>
+                            <ng-template #output>
+                                {{ equipes.nationality }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
                     <td> <a href="{{ equipes.url }}" target="_blank"> <img src="/wikipedia.png"> </a>  </td>
                 </tr>
             </ng-template>

@@ -5,11 +5,12 @@ import { PilotoService } from '../../services/pilotos.service';
 import { NgFor } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { FormsComponent } from '../../components/forms/forms.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-pilotos',
   standalone: true,
-  imports: [TableModule, FormsComponent],
+  imports: [TableModule, FormsComponent, FormsModule],
   templateUrl: './pilotos.component.html',
   styleUrl: './pilotos.component.css'
 })
@@ -25,5 +26,6 @@ export class PilotosComponent implements OnInit{
       console.log(this.pilotos)
     });
   }
+  
 }
 

@@ -14,18 +14,85 @@
                 <tr>
                     <th pSortableColumn="code"> Código <p-sortIcon field="code" /> </th>
                     <th pSortableColumn="givenName"> Nome <p-sortIcon field="givenName" /> </th>
+                    <th pSortableColumn="familyName"> Sobrenome <p-sortIcon field="familyName" /> </th>
                     <th pSortableColumn="permanentNumber"> Número <p-sortIcon field="permanentNumber" /> </th>
                     <th pSortableColumn="nationality"> Nacionalidade <p-sortIcon field="nationality" /> </th>
                     <th pSortableColumn="wiki"> Wiki </th>
                 </tr>
             </ng-template>
 
-            <ng-template #body let-piloto>
+            <ng-template #body let-piloto let-editing="editing">
                 <tr>
-                    <td>{{ piloto.code }}</td>
-                    <td>{{ piloto.givenName }} {{ piloto.familyName }}</td>
-                    <td>{{ piloto.permanentNumber }}</td>
-                    <td>{{ piloto.nationality }}</td>
+                    <td [pEditableColumn]="piloto.code" pEditableColumnField="code">
+                        <p-cellEditor>
+                            <ng-template #input>
+                                <input
+                                    pInputText
+                                    type="text"
+                                    [(ngModel)]="piloto.code" />
+                            </ng-template>
+                            <ng-template #output>
+                                {{ piloto.code }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td [pEditableColumn]="piloto.givenName" pEditableColumnField="givenName">
+                        <p-cellEditor>
+                            <ng-template #input>
+                                <input
+                                    pInputText
+                                    type="text"
+                                    [(ngModel)]="piloto.givenName" />
+                            </ng-template>
+                            <ng-template #output>
+                                {{ piloto.givenName }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td [pEditableColumn]="piloto.familyName" pEditableColumnField="familyName">
+                        <p-cellEditor>
+                            <ng-template #input>
+                                <input
+                                    pInputText
+                                    type="text"
+                                    [(ngModel)]="piloto.familyName" />
+                            </ng-template>
+                            <ng-template #output>
+                                {{ piloto.familyName }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td [pEditableColumn]="piloto.permanentNumber" pEditableColumnField="permanentNumber">
+                        <p-cellEditor>
+                            <ng-template #input>
+                                <input
+                                    pInputText
+                                    type="number"
+                                    [(ngModel)]="piloto.permanentNumber" />
+                            </ng-template>
+                            <ng-template #output>
+                                {{ piloto.permanentNumber }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td [pEditableColumn]="piloto.nationality" pEditableColumnField="nationality">
+                        <p-cellEditor>
+                            <ng-template #input>
+                                <input
+                                    pInputText
+                                    type="text"
+                                    [(ngModel)]="piloto.nationality" />
+                            </ng-template>
+                            <ng-template #output>
+                                {{ piloto.nationality }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    
                     <td> <a href="{{ piloto.url }}" target="_blank"> <img src="/wikipedia.png"> </a>  </td>
                 </tr>
             </ng-template>
@@ -33,4 +100,5 @@
         </p-table>
     </div>
 </div>
+
 <app-forms></app-forms>

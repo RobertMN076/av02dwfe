@@ -19,11 +19,50 @@
                 </tr>
             </ng-template>
 
-            <ng-template #body let-circuitos>
+            <ng-template #body let-circuitos let-editing="editing">
                 <tr>
-                    <td>{{ circuitos.circuitName }}</td>
-                    <td>{{ circuitos.Location.locality }}</td>
-                    <td>{{ circuitos.Location.country }}</td>
+                    <td [pEditableColumn]="circuitos.circuitName" pEditableColumnField="circuitName">
+                        <p-cellEditor>
+                            <ng-template #input>
+                                <input
+                                    pInputText
+                                    type="text"
+                                    [(ngModel)]="circuitos.circuitName" />
+                            </ng-template>
+                            <ng-template #output>
+                                {{ circuitos.circuitName }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td [pEditableColumn]="circuitos.Location.locality" pEditableColumnField="Location.locality">
+                        <p-cellEditor>
+                            <ng-template #input>
+                                <input
+                                    pInputText
+                                    type="text"
+                                    [(ngModel)]="circuitos.Location.locality" />
+                            </ng-template>
+                            <ng-template #output>
+                                {{ circuitos.Location.locality }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+
+                    <td [pEditableColumn]="circuitos.Location.country" pEditableColumnField="Location.country">
+                        <p-cellEditor>
+                            <ng-template #input>
+                                <input
+                                    pInputText
+                                    type="text"
+                                    [(ngModel)]="circuitos.Location.country" />
+                            </ng-template>
+                            <ng-template #output>
+                                {{ circuitos.Location.country }}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    
                     <td> <a href="{{ circuitos.url }}" target="_blank"> <img src="/wikipedia.png"> </a>  </td>
                 </tr>
             </ng-template>
