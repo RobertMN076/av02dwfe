@@ -1,1 +1,28 @@
-<p>historias works!</p>
+<div class="d-flex justify-content-center align-items-center vh-100 pt-5">
+    <div class="table-container w-100">
+        <p-table 
+            [value]="historias" 
+            sortField="titulo"
+            [tableStyle]="{ 'min-width': '100%', 'max-width': '80rem' }"
+            responsiveLayout="scroll"
+            selectionMode="single"> 
+
+            <ng-template #header>
+                <tr>
+                    <th pSortableColumn="titulo"> Título <p-sortIcon field="name" /> </th>
+                    <th pSortableColumn="ano"> Ano <p-sortIcon field="nationality" /> </th>
+                    <th pSortableColumn="wiki"> URL </th>
+                </tr>
+            </ng-template>
+
+            <ng-template #body let-historias>
+                <tr>
+                    <td> {{ historias.titulo }} </td>
+                    <td> {{ historias.ano }} </td>
+                    <td> <a [href]="historias.url" target="_blank"> <img src="/wikipedia.png"> </a> </td>
+                </tr>
+            </ng-template>
+
+        </p-table>
+    </div>
+</div>

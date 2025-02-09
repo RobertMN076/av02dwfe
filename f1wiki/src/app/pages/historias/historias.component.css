@@ -1,0 +1,38 @@
+* {
+    transition: 0.1s;
+}
+
+p-table {
+    display: flex;
+    justify-content: center;
+    font-family: F1Regular;   /* Usa a fonte F1Bold */
+}
+
+p-table th {
+    font-family: F1Bold;      /* Usa a fonte F1Bold */
+    border-bottom: 0;
+    text-align: center !important;
+}
+
+p-table td {
+    border-bottom: 0;
+    text-align: center !important;
+    cursor: pointer;
+}
+
+p-table td:hover {
+    color: red;
+}
+
+p-table img {
+    width: 24px;
+    user-select: pointer !important;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    background-color: transparent;
+    text-align: center;
+}
