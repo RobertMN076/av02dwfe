@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { TableModule } from 'primeng/table';
 
 import { HistoriasService } from '../../services/historias.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-historias',
   standalone: true,
-  imports: [TableModule],
+  imports: [TableModule, RouterLink],
   templateUrl: './historias.component.html',
   styleUrl: './historias.component.css'
 })

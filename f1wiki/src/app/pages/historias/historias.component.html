@@ -19,7 +19,7 @@
                 <tr>
                     <td> {{ historias.titulo }} </td>
                     <td> {{ historias.ano }} </td>
-                    <td> <a [href]="historias.url" target="_blank"> <img src="/wikipedia.png"> </a> </td>
+                    <td> <a routerLink={{historias.url}}> <img src="/wikipedia.png"> </a> </td>
                 </tr>
             </ng-template>
 
