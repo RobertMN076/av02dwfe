@@ -17,3 +17,35 @@ body {
     background-color: #18181b;
     overflow: hidden;
 }
+
+/* tamanho padrão para as imagens dos marcos historicos */
+.img-marco {
+    max-width: 100%; 
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    margin-bottom: 20px; 
+}
+
+/* estilos para a descricao do marco historico */
+.description {
+    text-align: justify; 
+    margin-top: 20px; 
+    font-size: 1.1rem; 
+    line-height: 1.6; 
+    padding: 0 20px; 
+}
+
+.container {
+    max-width: 960px; 
+    margin: 0 auto; 
+}
+
+
+/* video com o mesmo tamanho da imagem */
+.video-marco {
+    width: 100%; 
+    max-width: 600px; 
+    height: auto; 
+    margin-bottom: 20px; 
+}
