@@ -8,8 +8,15 @@ import { Marco1972Component } from './pages/marco1972/marco1972.component';
 import { Marco1988Component } from './pages/marco1988/marco1988.component';
 import { Marco2000Component } from './pages/marco2000/marco2000.component';
 import { Marco2021Component } from './pages/marco2021/marco2021.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
+    {
+        path: '',
+        title: 'Home',
+        component: HomeComponent
+    },
+
     {
         path: 'pilotos',
         title: 'Pilotos',
