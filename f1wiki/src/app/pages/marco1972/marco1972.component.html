@@ -1,6 +1,11 @@
 <div class="container mt-5 text-light text-center" style="padding-top: 100px;">
     <h1 class="text-danger" style="font-family: F1Bold;">Primeiro Título Mundial de um Brasileiro (1972)</h1>
-    <img src="/marco1972.jpg" alt="Emerson Fittipaldi 1972" class="img-fluid img-marco">
+    <img 
+      [src]="imagemAtual" 
+      alt="Emerson Fittipaldi 1972" 
+      class="img-fluid img-marco opacity-effect"
+      (mouseover)="trocarImagem(true)" 
+      (mouseleave)="trocarImagem(false)">
     <div class="description">
         <p>
             Em 1972, o piloto brasileiro Emerson Fittipaldi fez história ao se tornar o primeiro brasileiro a conquistar um título mundial de Fórmula 1. Pilotando para a equipe Lotus, Fittipaldi garantiu o campeonato após uma temporada de grande consistência, com vitórias notáveis em circuitos como o GP da França e o GP da Itália. O título de Fittipaldi não apenas consolidou sua carreira, mas também abriu as portas para uma era de dominância de pilotos brasileiros no esporte.

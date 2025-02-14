@@ -1,0 +1,7 @@
+.translate-effect {
+    transition: transform 0.3s ease;
+  }
+  
+  .translate-effect:hover {
+    transform: translateY(-5px);
+  }

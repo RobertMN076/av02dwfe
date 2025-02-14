@@ -1,12 +1,11 @@
 <div class="container mt-5 text-light text-center" style="padding-top: 100px;">
     <h1 class="text-danger" style="font-family: F1Bold;">Domínio de Max Verstappen (2021)</h1>
-    <img src="/marco2021.jpg" alt="Max Verstappen 2021" class="img-fluid img-marco">
-    
-    <audio id="verstappen-audio" autoplay>
-        <source src="/dududu.mp3" type="audio/mpeg">  <!-- kkkkkkkkkkkkkkkkk vou tirar isso depois pqp-->
-        Seu navegador não suporta a tag de áudio.
-    </audio>
-
+    <img 
+      [src]="imagemAtual" 
+      alt="Max Verstappen 2021" 
+      class="img-fluid img-marco tilt-effect"
+      (mouseover)="trocarImagem(true)" 
+      (mouseleave)="trocarImagem(false)">
     <div class="description">
         <p>
             Em 2021, Max Verstappen rompeu a hegemonia de Lewis Hamilton e conquistou seu primeiro título mundial, após uma temporada repleta de disputas intensas. A batalha pelo campeonato foi decidida de forma dramática, com a última corrida em Abu Dhabi sendo marcada por controvérsias após um acidente de segurança e a subsequente decisão de reiniciar a corrida. Verstappen superou Hamilton nas últimas voltas, conquistando um título merecido.
@@ -16,3 +15,4 @@
         </p>
     </div>
 </div>
+

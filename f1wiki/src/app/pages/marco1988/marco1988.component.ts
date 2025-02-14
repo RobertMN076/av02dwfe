@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './marco1988.component.css'
 })
 export class Marco1988Component {
+  imagemAtual: string = '/marco1988.jpg';
 
+  trocarImagem(hover: boolean) {
+    this.imagemAtual = hover ? '/marco1988-hover.jpg' : '/marco1988.jpg';
+  }
 }

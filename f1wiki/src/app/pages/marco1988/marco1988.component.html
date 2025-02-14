@@ -1,11 +1,11 @@
 <div class="container mt-5 text-light text-center" style="padding-top: 100px;">
     <h1 class="text-danger" style="font-family: F1Bold;">Primeiro Título de Ayrton Senna (1988)</h1>
-    
-    <video id="senna-video" autoplay muted loop class="video-marco">
-        <source src="/sennawin.mp4" type="video/mp4">
-        Seu navegador não suporta a tag de vídeo.
-    </video>
-
+    <img 
+      [src]="imagemAtual" 
+      alt="Ayrton Senna 1988" 
+      class="img-fluid img-marco translate-effect"
+      (mouseover)="trocarImagem(true)" 
+      (mouseleave)="trocarImagem(false)">
     <div class="description">
         <p>
             Ayrton Senna conquistou seu primeiro título mundial em 1988 pela equipe McLaren, após uma temporada memorável, destacando-se pela rivalidade com Alain Prost e pelo seu lendário desempenho na chuva.

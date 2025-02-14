@@ -1,0 +1,7 @@
+.tilt-effect {
+    transition: transform 0.3s ease-out;
+}
+
+.tilt-effect:hover {
+    transform: perspective(1000px) rotateY(10deg) rotateX(5deg) scale(1.05);
+}
