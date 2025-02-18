@@ -43,3 +43,9 @@ input {
     background-color: transparent;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    p-table{
+        margin-top: 200px;
+    }
+}

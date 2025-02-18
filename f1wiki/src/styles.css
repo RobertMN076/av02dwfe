@@ -15,7 +15,7 @@
 
 body {
     background-color: #18181b;
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* tamanho padrão para as imagens dos marcos historicos */
