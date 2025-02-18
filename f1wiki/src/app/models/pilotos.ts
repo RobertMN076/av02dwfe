@@ -1,11 +1,7 @@
-export interface Pilotos {
-    driverId: string
+export interface Pilotoss {
     permanentNumber: number
     code: string
-    url: string
     givenName: string
     familyName: string
-    dateOfBirth: string
     nationality: string
-    season: string
 }
