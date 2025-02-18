@@ -1,9 +1,14 @@
 <div class="d-flex justify-content-center align-items-center vh-100 pt-5">
     <div class="table-container w-100">
-        <p-table [value]="novosPilotos" sortField="code" [sortOrder]="1"
-            [tableStyle]="{ 'min-width': '100%', 'max-width': '80rem' }" [paginator]="true" [rows]="12"
-            responsiveLayout="scroll" selectionMode="single">
-
+        <p-table 
+        [value]="novosPilotos" 
+        sortField="code" 
+        [sortOrder]="1"
+        [tableStyle]="{ 'min-width': '100%', 'max-width': '80rem' }" 
+        [paginator]="true" 
+        [rows]="12"
+        responsiveLayout="stack" 
+        selectionMode="single">
             <ng-template #header>
                 <tr>
                     <th pSortableColumn="code"> Código <p-sortIcon field="code" /> </th>

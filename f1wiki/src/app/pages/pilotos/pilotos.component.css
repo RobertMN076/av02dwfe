@@ -60,4 +60,8 @@ input{
     padding-bottom: 20px;
 }
 
-
+@media (max-width: 768px) {
+    p-table{
+        margin-top: 200px;
+    }
+}
