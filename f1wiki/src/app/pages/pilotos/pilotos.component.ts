@@ -4,9 +4,8 @@ import { TableModule } from 'primeng/table';
 import { FormsComponent } from '../../components/forms/forms.component';
 import { FormsModule, Validators } from '@angular/forms';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Validator } from '@angular/forms';
-import { ChangeDetectorRef } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormsService } from '../../services/forms.service';
 
 @Component({
   selector: 'app-pilotos',
@@ -15,32 +14,41 @@ import { ChangeDetectorRef } from '@angular/core';
   templateUrl: './pilotos.component.html',
   styleUrl: './pilotos.component.css'
 })
-export class PilotosComponent {
+export class PilotosComponent implements OnInit{
   pilotos: any[] = []; // Inicializamos como um array vazio
+  novosPilotos: any[] = [];
+  newPilots: any[] = [];
+
 
   pilotoForm: FormGroup
 
-  constructor(private pilotoService: PilotoService, private router: Router, private cdr: ChangeDetectorRef) {
+  constructor(private pilotoService: PilotoService, private router: Router, private route: ActivatedRoute, private formsService: FormsService) {
+    
     this.pilotoForm = new FormGroup({
       givenName: new FormControl ('', ),
       familyName: new FormControl ('', ),
-      nacionality: new FormControl ('', ),
+      nationality: new FormControl ('', ),
       permanentNumber: new FormControl ('', ),
       code: new FormControl ('', ),
-    })
+    });
+  };
 
+  ngOnInit(): void {
     this.pilotoService.getPilotos().subscribe(data => {
       // A API Ergast retorna os dados dentro de um objeto MRData
       this.pilotos = data.MRData.DriverTable.Drivers;
-      console.log(this.pilotos)
+      this.novosPilotos = this.pilotos
+      console.log(this.novosPilotos)
     });
-  }
+  };
+
 
   onSubmit(): void {
-    this.pilotos.push(this.pilotoForm.value); // Adiciona o objeto diretamente
-    this.pilotoForm.reset(); // Limpa o formulário após o envio (opcional)
-    this.cdr.detectChanges(); // Força a atualização da tabela
-  }
+    this.newPilots = this.pilotoForm.value;
+    this.novosPilotos = this.pilotos.concat(this.newPilots)
+    this.pilotoForm.reset();
+    console.log(this.novosPilotos);
+  };
 
   
 }

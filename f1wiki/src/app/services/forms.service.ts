@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
-import { PilotoService } from './pilotos.service';
+import { PilotosComponent } from '../pages/pilotos/pilotos.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormsService {
+  private piloto: any[] = []
 
-  constructor() { }
+  getNewPilots(): any[] {
+    return this.piloto
+  };
+
+  addNewPilots(pilots: any): void {
+    this.piloto.push(pilots)
+  }
 }
