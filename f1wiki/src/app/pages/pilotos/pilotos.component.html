@@ -1,14 +1,8 @@
 <div class="d-flex justify-content-center align-items-center vh-100 pt-5">
     <div class="table-container w-100">
-        <p-table 
-            [value]="pilotos" 
-            sortField="code" 
-            [sortOrder]="1" 
-            [tableStyle]="{ 'min-width': '100%', 'max-width': '80rem' }"
-            [paginator]="true"
-            [rows]="12"
-            responsiveLayout="scroll"
-            selectionMode="single"> 
+        <p-table [value]="pilotos" sortField="code" [sortOrder]="1"
+            [tableStyle]="{ 'min-width': '100%', 'max-width': '80rem' }" [paginator]="true" [rows]="12"
+            responsiveLayout="scroll" selectionMode="single">
 
             <ng-template #header>
                 <tr>
@@ -26,10 +20,7 @@
                     <td [pEditableColumn]="piloto.code" pEditableColumnField="code">
                         <p-cellEditor>
                             <ng-template #input>
-                                <input
-                                    pInputText
-                                    type="text"
-                                    [(ngModel)]="piloto.code" />
+                                <input pInputText type="text" [(ngModel)]="piloto.code" />
                             </ng-template>
                             <ng-template #output>
                                 {{ piloto.code }}
@@ -40,10 +31,7 @@
                     <td [pEditableColumn]="piloto.givenName" pEditableColumnField="givenName">
                         <p-cellEditor>
                             <ng-template #input>
-                                <input
-                                    pInputText
-                                    type="text"
-                                    [(ngModel)]="piloto.givenName" />
+                                <input pInputText type="text" [(ngModel)]="piloto.givenName" />
                             </ng-template>
                             <ng-template #output>
                                 {{ piloto.givenName }}
@@ -54,10 +42,7 @@
                     <td [pEditableColumn]="piloto.familyName" pEditableColumnField="familyName">
                         <p-cellEditor>
                             <ng-template #input>
-                                <input
-                                    pInputText
-                                    type="text"
-                                    [(ngModel)]="piloto.familyName" />
+                                <input pInputText type="text" [(ngModel)]="piloto.familyName" />
                             </ng-template>
                             <ng-template #output>
                                 {{ piloto.familyName }}
@@ -68,10 +53,7 @@
                     <td [pEditableColumn]="piloto.permanentNumber" pEditableColumnField="permanentNumber">
                         <p-cellEditor>
                             <ng-template #input>
-                                <input
-                                    pInputText
-                                    type="number"
-                                    [(ngModel)]="piloto.permanentNumber" />
+                                <input pInputText type="number" [(ngModel)]="piloto.permanentNumber" />
                             </ng-template>
                             <ng-template #output>
                                 {{ piloto.permanentNumber }}
@@ -82,23 +64,50 @@
                     <td [pEditableColumn]="piloto.nationality" pEditableColumnField="nationality">
                         <p-cellEditor>
                             <ng-template #input>
-                                <input
-                                    pInputText
-                                    type="text"
-                                    [(ngModel)]="piloto.nationality" />
+                                <input pInputText type="text" [(ngModel)]="piloto.nationality" />
                             </ng-template>
                             <ng-template #output>
                                 {{ piloto.nationality }}
                             </ng-template>
                         </p-cellEditor>
                     </td>
-                    
-                    <td> <a href="{{ piloto.url }}" target="_blank"> <img src="/wikipedia.png"> </a>  </td>
+
+                    <td> <a href="{{ piloto.url }}" target="_blank"> <img src="/wikipedia.png"> </a> </td>
                 </tr>
             </ng-template>
 
         </p-table>
     </div>
 </div>
+<div class="container mt-4 form">
+    <form [formGroup]="pilotoForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="givenName" class="form-label">Nome</label>
+            <input type="text" id="givenName" class="form-control" formControlName="givenName">
+        </div>
 
-<app-forms></app-forms>
+        <div class="mb-3">
+            <label for="familyName" class="form-label">Sobrenome</label>
+            <input type="text" id="familyName" class="form-control" formControlName="familyName">
+        </div>
+
+        <div class="mb-3">
+            <label for="nacionality" class="form-label">Nacionalidade</label>
+            <input type="text" id="nacionality" class="form-control" formControlName="nacionality">
+        </div>
+
+        <div class="mb-3">
+            <label for="permanentNumber" class="form-label">Número</label>
+            <input type="text" id="permanentNumber" class="form-control" formControlName="permanentNumber">
+        </div>
+
+        <div class="mb-3">
+            <label for="code" class="form-label">Código</label>
+            <input type="text" id="code" class="form-control" formControlName="code">
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Adicionar Piloto
+        </button>
+    </form>
+</div>

@@ -37,3 +37,18 @@ input {
     text-align: center;
 }
 
+label{
+    font-family: F1Regular;
+    color: #141418;
+}
+
+input{
+    font-family: F1Regular;
+}
+
+.form{
+    background-color: white;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
