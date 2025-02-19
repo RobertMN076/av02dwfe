@@ -6,11 +6,12 @@ import { FormsModule, Validators } from '@angular/forms';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsService } from '../../services/forms.service';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-pilotos',
   standalone: true,
-  imports: [TableModule, FormsComponent, FormsModule, ReactiveFormsModule],
+  imports: [TableModule, ButtonModule, FormsComponent, FormsModule, ReactiveFormsModule],
   templateUrl: './pilotos.component.html',
   styleUrl: './pilotos.component.css'
 })

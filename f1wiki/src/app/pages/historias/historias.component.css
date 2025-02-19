@@ -6,22 +6,29 @@ p-table {
     display: flex;
     justify-content: center;
     font-family: F1Regular;   /* Usa a fonte F1Bold */
+    color: white !important; /* Texto branco */
+    border-radius: 8px;
+    padding: 10px;
 }
 
 p-table th {
     font-family: F1Bold;      /* Usa a fonte F1Bold */
     border-bottom: 0;
     text-align: center !important;
+    background-color: #18181b !important;
+    color: white !important;
 }
 
 p-table td {
     border-bottom: 0;
     text-align: center !important;
     cursor: pointer;
+    background-color: #18181b !important;
+    color: white !important;
 }
 
 p-table td:hover {
-    color: red;
+    color: red !important;
 }
 
 p-table img {
