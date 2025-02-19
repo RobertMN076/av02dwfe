@@ -1,5 +1,5 @@
-<div class="d-flex justify-content-center align-items-center vh-100 pt-5">
-    <div class="table-container w-100">
+<div class="d-flex justify-content-center align-items-center vh-100 mt-5">
+    <div class="table-container w-50">
         <p-table 
         [value]="todosPilotos" 
         sortField="code" 
@@ -7,7 +7,7 @@
         [tableStyle]="{ 'min-width': '100%', 'max-width': '80rem' }" 
         [paginator]="true" 
         [rows]="12"
-        responsiveLayout="stack" 
+        responsiveLayout="scroll" 
         selectionMode="single">
             <ng-template #header>
                 <tr>
@@ -86,7 +86,7 @@
 </div>
 <br>
 <br>
-<div class="container mt-4 form">
+<div class="container form">
     <form [formGroup]="pilotoForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
             <label for="givenName" class="form-label">Nome</label>
@@ -113,8 +113,10 @@
             <input type="text" id="code" class="form-control" formControlName="code">
         </div>
 
-        <button type="submit" class="btn btn-primary">
+        <!-- <button type="submit" class="btn btn-primary">
             Adicionar Piloto
-        </button>
+        </button> -->
+
+        <p-button label="Adicionar" variant="text" severity="danger" />
     </form>
 </div>
