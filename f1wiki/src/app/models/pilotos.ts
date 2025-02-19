@@ -1,4 +1,4 @@
-export interface Pilotoss {
+export interface Pilotos {
     permanentNumber: number
     code: string
     givenName: string

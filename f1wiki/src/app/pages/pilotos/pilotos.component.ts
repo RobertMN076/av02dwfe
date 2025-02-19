@@ -6,6 +6,7 @@ import { FormsModule, Validators } from '@angular/forms';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsService } from '../../services/forms.service';
+import { Pilotos } from '../../models/pilotos';
 
 @Component({
   selector: 'app-pilotos',
@@ -15,14 +16,13 @@ import { FormsService } from '../../services/forms.service';
   styleUrl: './pilotos.component.css'
 })
 export class PilotosComponent implements OnInit{
-  pilotos: any[] = []; // Inicializamos como um array vazio
-  novosPilotos: any[] = [];
-  newPilots: any[] = [];
+  apiPilotos: any[] = []; // Inicializamos como um array vazio para a api
+  todosPilotos: any[] = []; // Depois um array vazio para a lista de todos os pilotos
 
 
   pilotoForm: FormGroup
 
-  constructor(private pilotoService: PilotoService, private router: Router, private route: ActivatedRoute, private formsService: FormsService) {
+  constructor(private pilotoService: PilotoService, private router: Router, private route: ActivatedRoute, private adicionarPilotoService: FormsService) {
     
     this.pilotoForm = new FormGroup({
       givenName: new FormControl ('', ),
@@ -36,18 +36,24 @@ export class PilotosComponent implements OnInit{
   ngOnInit(): void {
     this.pilotoService.getPilotos().subscribe(data => {
       // A API Ergast retorna os dados dentro de um objeto MRData
-      this.pilotos = data.MRData.DriverTable.Drivers;
-      this.novosPilotos = this.pilotos
-      console.log(this.novosPilotos)
+      this.apiPilotos = data.MRData.DriverTable.Drivers;
+      this.todosPilotos = this.apiPilotos.concat(this.adicionarPilotoService.getNewPilots());
+      console.log(this.todosPilotos);
     });
   };
 
 
   onSubmit(): void {
-    this.newPilots = this.pilotoForm.value;
-    this.novosPilotos = this.pilotos.concat(this.newPilots)
+    const newPilots: Pilotos = ({
+      givenName: this.pilotoForm.value.givenName,
+      familyName: this.pilotoForm.value.familyName,
+      nationality: this.pilotoForm.value.nationality,
+      permanentNumber: this.pilotoForm.value.permanentNumber,
+      code: this.pilotoForm.value.code,
+    });
+    this.adicionarPilotoService.addNewPilots(newPilots);
+    this.todosPilotos = this.apiPilotos.concat(this.adicionarPilotoService.getNewPilots());
     this.pilotoForm.reset();
-    console.log(this.novosPilotos);
   };
 
   

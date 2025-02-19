@@ -8,6 +8,7 @@ export class FormsService {
   private piloto: any[] = []
 
   getNewPilots(): any[] {
+    console.log(this.piloto)
     return this.piloto
   };
 
