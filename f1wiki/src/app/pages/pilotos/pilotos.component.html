@@ -117,6 +117,6 @@
             Adicionar Piloto
         </button> -->
 
-        <p-button label="Adicionar" variant="text" severity="danger" />
+        <p-button label="Adicionar" type="submit" [disabled]="pilotoForm.invalid" severity="success"></p-button>
     </form>
 </div>
