@@ -4,7 +4,7 @@
 
 <h1>API Usada</h1>
 
-  - Possivelmente usaremos esta API de F1 para adquirir os dados dos pilotos. URL da API: https://openf1-org.translate.goog/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc
+  - Usamos esta API para coletar as informações dos pilotos, equipes e circuitos: https://documenter.getpostman.com/view/11586746/SztEa7bL
 
 <h1>Principais Funcionalidades</h1>
 
@@ -20,3 +20,12 @@
   - 19/01/2025: A página home está praticamente pronta, o roteamento entre as páginas principais estão prontos também.
   - Até 25/01/2025: Priorizaremos para que as páginas principais estejam visualmente prontas.
   - Até 14/02/2025: Focaremos nas funcionalidades do projeto, como a API, os forms e os services.
+
+<h1>Como Rodar o Projeto? </h1>
+
+ - Ter ao menos o angular versão 18 instalado
+ - Ter o node.js versão 11.22 instalado
+
+   - Git clone no terminal para copiar o projeto.
+   - Executar o comando de npm install para baixar as dependências.
+   - ng serve para rodar o projeto.
