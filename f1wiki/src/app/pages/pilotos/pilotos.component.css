@@ -60,12 +60,6 @@ input{
     padding-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    p-table{
-        margin-top: 200px;
-    }
-}
-
 .container {
     text-align: center;
     width: 50vh;

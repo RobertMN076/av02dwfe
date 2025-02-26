@@ -11,18 +11,18 @@
         selectionMode="single">
             <ng-template #header>
                 <tr>
-                    <th pSortableColumn="code"> Código <p-sortIcon field="code" /> </th>
+                    <th pSortableColumn="code" class="d-none d-md-table-cell"> Código <p-sortIcon field="code" /> </th>
                     <th pSortableColumn="givenName"> Nome <p-sortIcon field="givenName" /> </th>
                     <th pSortableColumn="familyName"> Sobrenome <p-sortIcon field="familyName" /> </th>
                     <th pSortableColumn="permanentNumber"> Número <p-sortIcon field="permanentNumber" /> </th>
-                    <th pSortableColumn="nationality"> Nacionalidade <p-sortIcon field="nationality" /> </th>
-                    <th pSortableColumn="wiki"> Wiki </th>
+                    <th pSortableColumn="nationality" class="d-none d-md-table-cell"> Nacionalidade <p-sortIcon field="nationality" /> </th>
+                    <th pSortableColumn="wiki" class="d-none d-md-table-cell"> Wiki </th>
                 </tr>
             </ng-template>
 
             <ng-template #body let-piloto let-editing="editing">
                 <tr>
-                    <td [pEditableColumn]="piloto.code" pEditableColumnField="code">
+                    <td [pEditableColumn]="piloto.code" pEditableColumnField="code" class="d-none d-md-table-cell">
                         <p-cellEditor>
                             <ng-template #input>
                                 <input pInputText type="text" [(ngModel)]="piloto.code" />
@@ -66,7 +66,7 @@
                         </p-cellEditor>
                     </td>
 
-                    <td [pEditableColumn]="piloto.nationality" pEditableColumnField="nationality">
+                    <td [pEditableColumn]="piloto.nationality" pEditableColumnField="nationality" class="d-none d-md-table-cell">
                         <p-cellEditor>
                             <ng-template #input>
                                 <input pInputText type="text" [(ngModel)]="piloto.nationality" />
@@ -77,7 +77,7 @@
                         </p-cellEditor>
                     </td>
 
-                    <td> <a href="{{ piloto.url }}" target="_blank"> <img src="/wikipedia.png"> </a> </td>
+                    <td> <a href="{{ piloto.url }}" target="_blank"> <img src="/wikipedia.png" class="d-none d-md-table-cell"> </a> </td>
                 </tr>
             </ng-template>
 
